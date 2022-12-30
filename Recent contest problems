@@ -1,0 +1,49 @@
+Chef has been participating regularly in rated contests but missed the last two contests due to his college exams. He now wants to solve them and so he visits the practice page to view these problems.
+
+Given a list of NN contest codes, where each contest code is either START38 or LTIME108, help Chef count how many problems were featured in each of the contests.
+
+Input Format
+First line will contain TT, number of test cases. Then the test cases follow.
+Each test case contains of two lines of input.
+First line of input contains the total count of problems that appeared in the two recent contests - NN.
+Second line of input contains the list of NN contest codes. Each code is either START38 or LTIME108, to which each problem belongs.
+Output Format
+For each test case, output two integers in a single new line - the first integer should be the number of problems in START38, and the second integer should be the number of problems in LTIME108.
+
+Constraints
+1 \leq T \leq 101≤T≤10
+1 \leq N \leq 10001≤N≤1000
+Each of the contest codes will be either START38 or LTIME108.
+
+#include <stdio.h>
+#include<string.h>
+
+int main(void) {
+	// your code goes here
+	int t;
+	scanf("%d",&t);
+	while(t--)
+	{
+	    
+	    int no_of_prblm,count1=0,count2=0;
+	    scanf("%d",&no_of_prblm);
+	    char string[no_of_prblm][10];
+	    for(int i=0;i<no_of_prblm;i++)
+	    {
+	        scanf("%s",string[i]);
+	       
+	    }
+	    for(int i=0;i<no_of_prblm;i++)
+	    {
+            if(strlen(string[i])==7)
+                    count1++;
+            else
+                    count2++;
+	    }
+	    
+	    printf("%d %d\n",count1,count2);
+	    
+	}
+	return 0;
+}
+
