@@ -1,0 +1,83 @@
+Problem
+Once upon a time, there was a hero and an old saint. And like in any story with a hero and an old saint, the old saint asked the hero — three questions!
+
+But here's the twist: each question was a binary question, which means that the answer to each must be either a 'Yes' or a 'No', not none, not both. Our hero, who was not so wise in the ways of science, answered them arbitrarily and just hoped he is correct. The old saint, being so old, does not remember which answers were correct. The only thing that he remembers is - how many of them were 'Yes', and how many of them were 'No'. Our hero will pass the test if the old saint cannot distinguish his responses from the set of correct answers i.e. if the number of 'Yes' and 'No' in the responses matches that in the correct answers, regardless of their order.
+
+You are given the answers to each of the three questions, and the responses of the hero to the same. Find whether the hero will be able to pass the old saint's test.
+
+Input Format
+First line will contain TT, the number of test cases. The description of the test cases follow.
+The first line of each test case consists of three space-separated integers A_1A 
+1
+​
+  A_2A 
+2
+​
+  A_3A 
+3
+​
+ , representing the correct answers to the first, second, and third question respectively (00 for 'No', 11 for 'Yes').
+The second line of each test case consists of three space-separated integers B_1B 
+1
+​
+  B_2B 
+2
+​
+  B_3B 
+3
+​
+ , representing the response of the hero to the first, second, and third question respectively (00 for 'No', 11 for 'Yes').
+Output Format
+For each test case, print "Pass" (without quotes) if the hero passes the old saint's test, "Fail" (without quotes) otherwise.
+
+Constraints
+1 \leq T \leq 641≤T≤64
+0 \leq A_i, B_i \leq 10≤A 
+i
+​
+ ,B 
+i
+​
+ ≤1
+ 
+ 
+ 
+ #include <stdio.h>
+
+int main(void) {
+	// your code goes here
+	int t;
+    scanf("%d", &t);
+    while (t--) {
+        int a[3], b[3];
+        int a1=0, a0=0, b1=0, b0=0;
+        
+        for (int i=0; i<3; i++) {
+            scanf("%d", &a[i]);
+            if (a[i]==0) {
+                a0++;
+            }
+            else {
+                a1++;
+            }
+        }
+        
+        for (int i=0; i<3; i++) {
+            scanf("%d", &b[i]);
+            if (b[i]==0) {
+                b0++;
+            }
+            else {
+                b1++;
+            }
+        }
+        
+        if (a0==b0 && a1==b1) {
+            printf("Pass\n");
+        }
+        else {
+            printf("Fail\n");
+        }
+    }
+	return 0;
+}
